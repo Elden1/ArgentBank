@@ -9,9 +9,8 @@ import Modification from './Pages/Modification';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
-import { isTokenPresent } from './authUtils'; // Import your utility function
+import { isTokenPresent } from './authUtils'; 
 
-// Define your route guard HOC
 function ProtectedRoute({ element, path }) {
   if (isTokenPresent() || path === '/login') {
     return element;

@@ -13,7 +13,7 @@ const Modificator = ({ onFormSubmit }) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset, // Add the reset function
+    reset,
   } = useForm();
 
   const submitForm = async (data) => {
@@ -21,7 +21,7 @@ const Modificator = ({ onFormSubmit }) => {
     setTimeout(() => {
       dispatch(modifAction(data));
       onFormSubmit();
-      reset(); // Reset the input field after submission
+      reset(); 
       setIsLoading(false)
     }, 500);
   };
