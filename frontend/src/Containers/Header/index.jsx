@@ -2,7 +2,7 @@ import React from 'react';
 import './assets/style.scss';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import bankLogo from './assets/argentBankLogo.png';
+import bankLogo from './assets/argentBankLogo.webp';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import SignOutButton from '../../Components/LogOut';
 
