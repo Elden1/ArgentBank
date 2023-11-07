@@ -9,31 +9,31 @@ import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import { userLogin } from '../../Redux/Actions/authActions'
 
 let Form = () =>{
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false)
 
-    const {
-        register,
-        handleSubmit,   
-        formState: { errors }
-        } = useForm()
-    
-        const submitForm = async (data) => {
-            try {
-              setIsLoading(true);
-              dispatch(userLogin(data));
-              setTimeout(() => {
-                let userToken = localStorage.getItem('userToken')
-                if(userToken != null) {
-                  navigate('/user')
-                }
-                setIsLoading(false);
-              }, 1000);
-            } catch (error) {
-             
-            } 
-          };
+  const {
+      register,
+      handleSubmit,   
+      formState: { errors }
+      } = useForm()
+  
+      const submitForm = async (data) => {
+          try {
+            setIsLoading(true);
+            dispatch(userLogin(data));
+            setTimeout(() => {
+              let userToken = localStorage.getItem('userToken')
+              if(userToken != null) {
+                navigate('/user')
+              }
+              setIsLoading(false);
+            }, 1000);
+          } catch (error) {
+            
+          } 
+        };
 
 return (
         <div className="sign-in-content">
@@ -41,7 +41,7 @@ return (
             <h1>Sign in</h1>
             <form onSubmit={handleSubmit(submitForm)}>    
             <div className='input-wrapper'>
-                <label htmlFor="email">Username</label>
+                <label htmlFor="email">Email</label>
                 <input name="email" {...register("email", { required: true })} />
                 {errors.username && <p>This field is required</p>}                
             </div>

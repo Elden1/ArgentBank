@@ -7,7 +7,7 @@ let store = configureStore ({
     reducer : {
         auth : authSlice,
         userData: fetchSlice,
-        modifData:modifSlice
+        modifData: modifSlice
     }
 })
 export default store

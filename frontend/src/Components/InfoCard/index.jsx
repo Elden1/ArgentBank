@@ -17,7 +17,6 @@ let InfoCard = () => {
             {bubbleInt.title} 
         </h3>
         <br />
-
         <p>
             {bubbleInt.content}
         </p>
