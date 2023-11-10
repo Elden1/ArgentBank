@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
@@ -17,17 +18,17 @@ const LogOut = () => {
         <a href="/" onClick={handleLogOut}  className="main-nav-item">
             <p>loading...</p>
           <FontAwesomeIcon icon={faRightFromBracket} />
-          <p>Sign out</p>
+          <p>Sign out</p> 
         </a>
       );   
   }
 
   return (
     <div className='nav-log-out'>
-        <a href="/" onClick={handleLogOut}  className="main-nav-item">
+        <Link to="/user" className="main-nav-item">
             <FontAwesomeIcon icon={faCircleUser} />
             <p>{userData.userIntel.firstName}</p>
-        </a>
+        </Link>
         <a href="/" onClick={handleLogOut}  className="main-nav-item">
             <FontAwesomeIcon icon={faRightFromBracket} />
             <p>Sign out</p>

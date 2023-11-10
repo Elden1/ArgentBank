@@ -19,7 +19,7 @@ let Modification = () => {
   if (userData.userIntel === null) {
     return (
       <section className="main-modif">
-      <Header isAuthenticated={true} userData={userData} />
+      <Header />
       <section className="main bg_dark">
       <section className="sign-in-content modif">
       <FontAwesomeIcon icon={faCircleUser} className="fa fa-user-circle sign-in-icon"/>

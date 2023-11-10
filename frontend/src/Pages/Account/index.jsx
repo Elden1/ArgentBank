@@ -26,13 +26,12 @@ let Account = () => {
 
 return ( 
   <section className="main-user">
-      <Header  
-      isAuthenticated={true}
-      userData={userData}/>
+      <Header />
         <div className="main bg_dark">
             <div className="header">
               <User  
               userData={userData} />
+              
               <button onClick={() => navigate('/modification')} className="edit-button">Edit Name</button>
             </div>
             <h2 className="sr-only">Accounts</h2>

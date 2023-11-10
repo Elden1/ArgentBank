@@ -6,7 +6,9 @@ import bankLogo from './assets/argentBankLogo.webp';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import SignOutButton from '../../Components/LogOut';
 
-const Header = ({ isAuthenticated, userData }) => {
+const Header = () => {
+  const isAuthenticated = localStorage.getItem('userToken') !== null;
+
   return (
     <nav className='main-nav'>
       <Link to="/">
@@ -18,23 +20,13 @@ const Header = ({ isAuthenticated, userData }) => {
       </Link>
 
       {isAuthenticated ? (
-  userData.userIntel && userData.userIntel.firstName ? (
-    <>
-    <SignOutButton
-    isAuthenticated={true} 
-    userData={userData}/>
-          </>
-        ) : (
-          <div>Loading...</div>
-        )
+        <SignOutButton />
       ) : (
-        <>
-        <a className="main-nav-item" href="/login">
-            <FontAwesomeIcon icon={faCircleUser} />
-            Sign in
-         </a>
-        </>
-    )}
+        <Link to="/login" className="main-nav-item">
+          <FontAwesomeIcon icon={faCircleUser} />
+          Sign in
+        </Link>
+      )}
     </nav>
   );
 };
